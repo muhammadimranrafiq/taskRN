@@ -29,5 +29,8 @@ readStream.on('data', function(chunk) {
             bluedrop ++;
         }
     }
-    console.log("Red :",reddrop, " Blue ",bluedrop);
+    let output = reddrop + '\r\n' + bluedrop;
+    Fs.writeFile('Output.txt',output,(err,returndata) => {
+        console.log('Done')
+    });
 });
